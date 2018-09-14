@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    tools:context=".Page.SmartCardActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--姓名-->
+                    <TextView
+                        android:id="@+id/smartcard_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:paddingLeft="5dp"
+                        android:text="张三"
+                        android:textSize="24sp" />
+
+                    <!--学号-->
+                    <TextView
+                        android:id="@+id/smartcard_stuId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/smartcard_name"
+                        android:paddingLeft="5dp"
+                        android:text="201611010555"
+                        android:textSize="24sp" />
+
+                    <!--卡号-->
+                    <TextView
+                        android:id="@+id/smartcard_cardId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/smartcard_name"
+                        android:paddingRight="5dp"
+                        android:text="55151"
+                        android:textSize="24sp" />
+
+                    <!--一条划分线-->
+                    <TextView
+                        android:id="@+id/divide_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/smartcard_stuId"
+                        android:background="@color/gray" />
+
+                    <!--余额-->
+                    <TextView
+                        android:id="@+id/smartcard_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/divide_line"
+                        android:paddingLeft="5dp"
+                        android:text="3.60"
+                        android:textSize="24sp" />
+
+                    <!--过渡余额-->
+                    <TextView
+                        android:id="@+id/smartcard_traBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/divide_line"
+                        android:layout_centerInParent="true"
+                        android:text="0.0"
+                        android:textSize="24sp" />
+
+                    <!--状态-->
+                    <TextView
+                        android:id="@+id/smartcard_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/divide_line"
+                        android:paddingRight="5dp"
+                        android:text="正常"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/smartcard_balance"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="余额（元）" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/smartcard_traBalance"
+                        android:layout_centerInParent="true"
+                        android:paddingBottom="5dp"
+                        android:text="过渡余额（元）" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/smartcard_state"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="5dp"
+                        android:text="状态" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/smaercard_lable1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="消费"
+                        android:textSize="24sp" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/smartcard_pieChart"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        android:layout_below="@+id/smaercard_lable1"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:focusableInTouchMode="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/smartcard_label2"
+                        android:text="最近消费"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_below="@+id/smartcard_label2"
+                        android:id="@+id/smartcard_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:layout_below="@id/smartcard_recyclerView"
+                        android:id="@+id/button"
+                        android:text="查看更多"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

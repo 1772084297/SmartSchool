@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/menu_item1"
+            android:checkable="true"
+            android:icon="@drawable/navigation"
+            android:title="标题一"/>
+
+        <item
+            android:id="@+id/menu_item2"
+            android:checkable="true"
+            android:icon="@drawable/navigation"
+            android:title="标题二"/>
+
+        <item
+            android:id="@+id/menu_item3"
+            android:checkable="true"
+            android:icon="@drawable/navigation"
+            android:title="标题三"/>
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/menu_item4"
+            android:checkable="true"
+            android:icon="@drawable/navigation"
+            android:title="标题四"/>
+
+        <item
+            android:id="@+id/menu_item5"
+            android:checkable="true"
+            android:icon="@drawable/navigation"
+            android:title="标题五"/>
+    </group>
+
+</menu>

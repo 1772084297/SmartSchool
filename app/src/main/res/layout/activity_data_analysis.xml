@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Page.DataAnalysisActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dataanalysis_label1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="性别分析" />
+
+                    <org.angmarch.views.NiceSpinner
+                        android:id="@+id/dataanalysis_spinner_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <org.angmarch.views.NiceSpinner
+                        android:id="@+id/dataanalysis_spinner_college"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <com.daimajia.numberprogressbar.NumberProgressBar
+                        android:id="@+id/dataanalysis_boyBar"
+                        style="@style/NumberProgressBar_Default"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        app:progress_reached_bar_height="10dp" />
+
+
+                    <com.daimajia.numberprogressbar.NumberProgressBar
+                        android:id="@+id/dataanalysis_girlBar"
+                        style="@style/NumberProgressBar_Beauty_Red"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        app:progress_reached_bar_height="10dp" />
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardElevation="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="专业分析" />
+
+                    <org.angmarch.views.NiceSpinner
+                        android:id="@+id/dataanalysis_spinner_college2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <org.angmarch.views.NiceSpinner
+                        android:id="@+id/dataanalysis_spinner_grade2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <org.angmarch.views.NiceSpinner
+                        android:id="@+id/dataanalysis_spinner_major"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/dataanalysis_pieChart"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
