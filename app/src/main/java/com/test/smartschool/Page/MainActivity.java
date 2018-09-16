@@ -36,7 +36,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//https://blog.csdn.net/yaosizy/article/details/70231359
+//某些页面禁止滑动Toolbar
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private TabLayout tabLayout;
@@ -67,6 +68,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 
     }
+
 
     @Override
     protected int initLayout() {

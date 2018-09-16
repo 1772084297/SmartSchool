@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Page.SmartCardFragment">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:scrollbars="none"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -166,34 +166,33 @@
                 app:cardElevation="10dp">
 
                 <RelativeLayout
-                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:focusableInTouchMode="true">
 
                     <TextView
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
                         android:id="@+id/smartcard_label2"
-                        android:text="最近消费"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="最近消费" />
 
 
                     <android.support.v7.widget.RecyclerView
-                        android:layout_below="@+id/smartcard_label2"
                         android:id="@+id/smartcard_recyclerView"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/smartcard_label2" />
 
                     <Button
-                        android:layout_below="@id/smartcard_recyclerView"
                         android:id="@+id/button"
-                        android:text="查看更多"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/smartcard_recyclerView"
+                        android:text="查看更多" />
 
                 </RelativeLayout>
-
 
 
             </android.support.v7.widget.CardView>
@@ -202,7 +201,7 @@
         </LinearLayout>
 
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 
 </LinearLayout>
