@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/smartcard_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Page.SmartCardFragment">
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/smartcard_scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
@@ -144,8 +146,7 @@
                         android:id="@+id/smaercard_lable1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="消费"
-                        android:textSize="24sp" />
+                        android:text="消费" />
 
                     <com.github.mikephil.charting.charts.PieChart
                         android:id="@+id/smartcard_pieChart"
@@ -204,4 +205,4 @@
     </android.support.v4.widget.NestedScrollView>
 
 
-</LinearLayout>
+</FrameLayout>

@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,6 +37,7 @@ public class SmartCardFragment extends Fragment {
     private TextView tv_traBalance;
     private TextView tv_state;
     private PieChart pieChart;
+
 
     private RecyclerView recyclerView;
     private Adapter_consumeRecords adapter;
@@ -70,14 +72,11 @@ public class SmartCardFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //跳转到消费列表界面
-                Fragment fragment = new SmartCardDetialFragment();
-                FragmentManager manager = getFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.view_pager,fragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                Intent intent = new Intent(getContext(),SmartCardDetialActivity.class);
+                startActivity(intent);
             }
         });
+
 
         initPieChart();
     }

@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -36,6 +37,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 //https://blog.csdn.net/yaosizy/article/details/70231359
 //某些页面禁止滑动Toolbar
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,23 +52,18 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private DrawerLayout drawerLayout;
 
     private Toolbar toolbar;
+    private AppBarLayout appBarLayout;
 
-
-    public static Uri tempUri;
-    //弹出框选择图片来源
-    //public xxxx xxxx;
-    private ImageView imageView;
+    private CircleImageView nav_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         View headView = navigationView.inflateHeaderView(R.layout.navigation_head);
-        imageView = headView.findViewById(R.id.navigation_header_icon);
+        nav_image = headView.findViewById(R.id.icon_Image);
 
-        imageView.setImageResource(R.mipmap.back);
-
+//        nav_image.setImageResource(R.mipmap.back);
 
     }
 
@@ -78,6 +76,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void initView() {
+        //为了实现控制AppBarLayout滑动与禁止
+        appBarLayout = findViewById(R.id.main_appBarLayout);
+        final View mAppBarChildAt = appBarLayout.getChildAt(0);
+        final AppBarLayout.LayoutParams mAppBarParams = (AppBarLayout.LayoutParams) mAppBarChildAt.getLayoutParams();
+
 
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.view_pager);
@@ -90,7 +93,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         fragmentList.add(new HomeFragment());
         fragmentList.add(new Fragment2());
 
-        viewPagerAdapter = new Adapter_viewPager(getSupportFragmentManager(),titleList,fragmentList);
+        viewPagerAdapter = new Adapter_viewPager(getSupportFragmentManager(), titleList, fragmentList);
         viewPager.setAdapter(viewPagerAdapter);
         //设置首先展示中间的fragment
         viewPager.setCurrentItem(1);
@@ -98,6 +101,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition()==0){
+                    //第一个界面可以滑动，其余界面不可滑动
+                    mAppBarParams.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL);
+                }else{
+                    mAppBarParams.setScrollFlags(0);
+                }
+                mAppBarChildAt.setLayoutParams(mAppBarParams);
                 viewPager.setCurrentItem(tab.getPosition());
             }
 
@@ -130,30 +140,31 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     }
 
+
     @Override
     protected void initData() {
-//        NetClient.getInstance().startRequest("https://www.baidu.com/",callback);
+
     }
 
 
     //navigationView Item的点击事件
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.menu_item1:
-                Toast.makeText(this,"点击了某事件",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "点击了某事件", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu_item2:
-                Toast.makeText(this,"点击了某事件",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "点击了某事件", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu_item3:
-                Toast.makeText(this,"点击了某事件",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "点击了某事件", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu_item4:
-                Toast.makeText(this,"点击了某事件",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "点击了某事件", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu_item5:
-                Toast.makeText(this,"点击了某事件",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "点击了某事件", Toast.LENGTH_SHORT).show();
                 break;
 
         }
