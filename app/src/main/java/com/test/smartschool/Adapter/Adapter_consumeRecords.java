@@ -11,8 +11,12 @@ import android.widget.TextView;
 import com.test.smartschool.Gson.ConsumeRecord;
 import com.test.smartschool.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Adapter_consumeRecords extends RecyclerView.Adapter<Adapter_consumeRecords.ViewHolder> {
 
@@ -36,7 +40,11 @@ public class Adapter_consumeRecords extends RecyclerView.Adapter<Adapter_consume
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ConsumeRecord record = dataList.get(position);
-        holder.textView.setText(record.getData());
+        if (position%2==0){
+            holder.iv_icon.setImageResource(R.mipmap.icon_canteen);
+        }else{
+            holder.iv_icon.setImageResource(R.mipmap.icon_shopping);
+        }
     }
 
     @Override
@@ -56,12 +64,19 @@ public class Adapter_consumeRecords extends RecyclerView.Adapter<Adapter_consume
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView;
+        TextView tv_amount;
+        TextView tv_place;
+        TextView tv_time;
+        CircleImageView iv_icon;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textView = itemView.findViewById(R.id.textView);
+            iv_icon = itemView.findViewById(R.id.item_icon);
+            tv_amount = itemView.findViewById(R.id.item_amount);
+            tv_place = itemView.findViewById(R.id.item_place);
+            tv_time = itemView.findViewById(R.id.item_time);
+
         }
 
     }

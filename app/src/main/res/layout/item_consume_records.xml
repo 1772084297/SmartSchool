@@ -4,11 +4,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:text="TEXT"
-        android:textSize="40sp"
+
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/icon_shopping" />
+
+        <TextView
+            android:id="@+id/item_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/item_icon"
+            android:paddingLeft="10dp"
+            android:text="-6.5" />
+
+        <!--名词解释 commercial tenant name 商业租户名称 -->
+        <TextView
+            android:id="@+id/item_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:layout_toRightOf="@+id/item_icon"
+            android:layout_below="@+id/item_amount"
+            android:text="长清第二食堂（二三楼）" />
+
+        <!--名词解释 trading time 交易时间-->
+        <TextView
+            android:id="@+id/item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/item_place"
+            android:layout_alignParentRight="true"
+            android:text="2016-02-02 22:22:22" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>

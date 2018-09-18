@@ -68,30 +68,4 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-
-    //显示长toast
-    public void toastLong(String msg) {
-        if (toast == null) {
-            toast = new Toast(this);
-            toast.setDuration(Toast.LENGTH_LONG);
-            toast.setText(msg);
-            toast.show();
-        } else {
-            toast.setText(msg);
-            toast.show();
-        }
-    }
-
-    //显示短toast
-    public void toastShort(String msg) {
-        if (toast == null) {
-            toast = new Toast(this);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.setText(msg);
-            toast.show();
-        } else {
-            toast.setText(msg);
-            toast.show();
-        }
-    }
 }

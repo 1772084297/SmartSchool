@@ -11,8 +11,8 @@
         <item
             android:id="@+id/menu_item2"
             android:checkable="true"
-            android:icon="@drawable/navigation"
-            android:title="标题二"/>
+            android:icon="@mipmap/icon_data_analysis"
+            android:title="数据分析"/>
 
         <item
             android:id="@+id/menu_item3"
@@ -31,8 +31,8 @@
         <item
             android:id="@+id/menu_item5"
             android:checkable="true"
-            android:icon="@drawable/navigation"
-            android:title="标题五"/>
+            android:icon="@mipmap/icon_personal"
+            android:title="个人设置"/>
     </group>
 
 </menu>

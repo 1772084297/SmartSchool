@@ -101,10 +101,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition()==0){
+                if (tab.getPosition() == 0) {
                     //第一个界面可以滑动，其余界面不可滑动
                     mAppBarParams.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL);
-                }else{
+                } else {
                     mAppBarParams.setScrollFlags(0);
                 }
                 mAppBarChildAt.setLayoutParams(mAppBarParams);
@@ -155,7 +155,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 Toast.makeText(this, "点击了某事件", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu_item2:
-                Toast.makeText(this, "点击了某事件", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, DataAnalysisActivity.class);
+                startActivity(intent);
                 break;
             case R.id.menu_item3:
                 Toast.makeText(this, "点击了某事件", Toast.LENGTH_SHORT).show();

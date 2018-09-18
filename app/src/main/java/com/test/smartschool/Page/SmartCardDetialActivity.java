@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.jwenfeng.library.pulltorefresh.BaseRefreshListener;
 import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
@@ -47,9 +48,8 @@ public class SmartCardDetialActivity extends BaseActivity {
                     public void run() {
                         refreshData();
                     }
-                },1200);
+                }, 1200);
                 //换位置，在数据请求成功或失败后在finish
-                pullToRefreshLayout.finishRefresh();
             }
 
             @Override
@@ -60,8 +60,8 @@ public class SmartCardDetialActivity extends BaseActivity {
                     public void run() {
                         loadMoreData();
                     }
-                },1200);
-                pullToRefreshLayout.finishLoadMore();
+                }, 1200);
+
             }
         });
 
@@ -81,16 +81,19 @@ public class SmartCardDetialActivity extends BaseActivity {
         adapter.addData(records);
     }
 
-    private void refreshData(){
+    private void refreshData() {
 //        String url = "";
 //        NetClient.getInstance().startRequest(url,callBack);
-        toastShort("假装在刷新数据");
+        Toast.makeText(this, "假装在刷新数据", Toast.LENGTH_SHORT).show();
+        pullToRefreshLayout.finishRefresh();
+
     }
 
-    private void loadMoreData(){
+    private void loadMoreData() {
 //        String url = "";
 //        NetClient.getInstance().startRequest(url,callBack);
-        toastShort("假装在加载数据");
+        Toast.makeText(this, "假装在加载数据", Toast.LENGTH_SHORT).show();
+        pullToRefreshLayout.finishLoadMore();
     }
 
     private NetClient.MyCallBack callBack = new NetClient.MyCallBack() {
